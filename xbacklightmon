@@ -15,8 +15,8 @@ luminance() {
 
 read -r max < "$backlight_path"/max_brightness
 
-xrandr --output eDP-1 --brightness "$(luminance)"
+xrandr --output eDP1 --brightness "$(luminance)"
 
 inotifywait -me modify "$backlight_path"/actual_brightness | while read; do
-    xrandr --output eDP-1 --brightness "$(luminance)"
+    xrandr --output eDP1 --brightness "$(luminance)"
 done
